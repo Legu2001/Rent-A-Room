@@ -17,12 +17,14 @@ import Home from './components/home/Home';
 
 
 function App() {
+  const isVSCodeServer = window.location.href.includes('cloudfront.net');
+  const basename = isVSCodeServer ? '/proxy/3000/' : '/';
 
   return (
     <div>
 
 
-      <Router>
+      <Router basename={basename}>
 
         <nav className="navbar navbar-expand navbar-dark bg-dark">
           <Link to={"/"} className="navbar-brand">
